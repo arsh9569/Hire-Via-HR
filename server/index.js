@@ -6,15 +6,17 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const app = express();
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://hireviahr.in",
+  "https://www.hireviahr.in",
+  process.env.FRONTEND_URL,
+].filter(Boolean);
 
 // Middleware
 app.use(
   cors({
-    origin: [
-      "http://localhost:5173",
-      "https://hireviahr.in",
-      "https://www.hireviahr.in",
-    ],
+    origin: allowedOrigins,
     methods: ["GET", "POST"],
     allowedHeaders: ["Content-Type"],
   })
@@ -42,6 +44,18 @@ app.get("/", (req, res) => {
 app.post("/api/contact", async (req, res) => {
   try {
     const { firstName, lastName, email, phone, subject, message } = req.body;
+
+    const missingEmailSettings = ["EMAIL_USER", "EMAIL_PASS", "CLIENT_EMAIL"].filter(
+      (key) => !process.env[key]?.trim()
+    );
+    if (missingEmailSettings.length > 0) {
+      console.error(
+        `Contact email configuration is missing: ${missingEmailSettings.join(", ")}`
+      );
+      return res.status(503).json({
+        message: "The contact form is not configured yet. Please call +91 9220762559.",
+      });
+    }
 
     // Validate required fields
     if (!firstName || !email || !message) {

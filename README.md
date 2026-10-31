@@ -4,8 +4,14 @@
 1. Install Node.js (LTS).
 2. Open this folder in VS Code.
 3. Run `npm install`.
-4. Run `npm run dev`.
-5. Open the local URL printed by Vite.
+4. Copy `.env.example` to `.env` and set `EMAIL_USER`, `EMAIL_PASS`, and `CLIENT_EMAIL`.
+   For Gmail, `EMAIL_PASS` must be a Google App Password.
+5. In one terminal, run `npm run server`.
+6. In another terminal, run `npm run dev` and open the local URL printed by Vite.
+
+Vite proxies local `/api` requests to the backend on port 5000. In production, set
+`VITE_API_URL` to the backend origin and set `FRONTEND_URL` on the backend to the
+website's origin. Never commit `.env` or publish email credentials.
 
 ## Routes
 - `/` — Home
@@ -15,10 +21,13 @@
 
 The navbar's **Find a Job** button intentionally routes to `/contact`, as requested.
 
+## Contact form
+- The contact form sends submissions to `POST /api/contact` and emails them using the backend's Gmail transporter.
+- Configure `EMAIL_USER`, `EMAIL_PASS`, and `CLIENT_EMAIL` before running the backend.
+
 ## Before production
 - Replace the text-based logo with the client's approved logo.
 - Replace image placeholders with approved assets from the client.
 - Verify all company claims, statistics, testimonials and legal-policy copy.
-- Connect the contact form to an email delivery service. It is currently frontend-only and does not send email.
 - Confirm official social-media profile URLs.
 - Add real page metadata and a production privacy/terms/refund policy.

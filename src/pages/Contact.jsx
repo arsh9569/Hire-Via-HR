@@ -558,17 +558,25 @@ export default function Contact() {
     setSent(false)
     setError('')
     try {
-      const response = await fetch('http://localhost:5000/api/contact', {
+      const apiUrl = import.meta.env.VITE_API_URL || ''
+      const response = await fetch(`${apiUrl}/api/contact`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
       })
-      if (!response.ok) throw new Error('Failed to send message')
+      const result = await response.json()
+      if (!response.ok) {
+        throw new Error(result.message || 'Unable to send your message. Please try again.')
+      }
       setSent(true)
       form.reset()
       setSelectedCountry(countries.find(({ name }) => name === 'India'))
     } catch (err) {
-      setError('Message send nahi hua. Please try again.')
+      setError(
+        err instanceof TypeError
+          ? 'Could not connect to the contact server. Please try again later or call +91 9220762559.'
+          : err.message
+      )
       console.error(err)
     } finally {
       setLoading(false)

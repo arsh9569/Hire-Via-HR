@@ -34,7 +34,7 @@ export default function Footer() {
         </div>
         <div><h4>Explore</h4><Link to="/">Home</Link><Link to="/about">About Us</Link><Link to="/services">Services</Link><Link to="/contact">Contact Us</Link></div>
         <div><h4>Information</h4><Link to="/privacy-policy">Privacy Policy</Link><Link to="/terms">Terms and Conditions</Link><Link to="/refund-policy">Refund Policy</Link></div>
-        <div><h4>Contact</h4><p>D100, 3rd Floor, Gali Number 40, Rajapuri, Uttam Nagar, New Delhi - 110059</p><p><a href="tel:+919220762559">+91 9220762559</a></p><p><a href="mailto:info@hireviahr.in">info@hireviahr.in</a></p></div>
+        <div><h4>Contact</h4><p>Rajapuri, Uttam Nagar, Dwarka, New Delhi - 110075</p><p>Branch offices: Hyderabad, Bangalore, Pune, Chandigarh and Mumbai</p><p><a href="tel:+919220762559">+91 9220762559</a></p><p><a href="mailto:info@hireviahr.in">info@hireviahr.in</a></p></div>
       </div>
     </footer>
   )

@@ -145,7 +145,7 @@ export default function Home() {
             <p>
               Discover how Hire Via HR's expert placement services can help
               you connect with the right talent or find your next career
-              opportunity in BPO, Call Centers, and Non-IT sectors.
+              opportunity in BPO, Call Centers,Non-IT sectors,Work from Home and Data Entry.
             </p>
 
             <Link to="/contact" className="mock-orange-btn hero-button">

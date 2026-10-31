@@ -63,14 +63,6 @@ export default function Navbar() {
         <div className={`nav-actions ${open ? "open" : ""}`}>
           <Link
             to="/contact"
-            className="btn btn-navy btn-small"
-            onClick={closeMenu}
-          >
-            Contact
-          </Link>
-
-          <Link
-            to="/contact"
             className="btn btn-orange btn-small"
             onClick={closeMenu}
           >

@@ -5,7 +5,7 @@
   --mock-text: #151b2b;
   --mock-muted: #687386;
   color: var(--mock-text);
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Hanken Grotesk', sans-serif;
   overflow: hidden;
 }
 
@@ -62,7 +62,7 @@
 
 .mock-brand strong {
   display: block;
-  font: 800 20px Manrope, sans-serif;
+  font: 800 20px 'Bricolage Grotesque', sans-serif;
 }
 
 .mock-brand em {
@@ -162,7 +162,7 @@
 }
 
 .mock-hero-copy h1 {
-  font: 800 clamp(36px, 4.3vw, 55px)/1.12 Manrope, sans-serif;
+  font: 800 clamp(36px, 4.3vw, 55px)/1.12 'Bricolage Grotesque', sans-serif;
   letter-spacing: -1.8px;
   margin: 0 0 20px;
 }
@@ -243,7 +243,7 @@
 }
 
 .mock-section-heading h2 {
-  font: 800 36px Manrope, sans-serif;
+  font: 800 36px 'Bricolage Grotesque', sans-serif;
   margin: 0 0 10px;
 }
 
@@ -284,7 +284,7 @@
 }
 
 .mock-trust-card h3 {
-  font: 800 16px Manrope, sans-serif;
+  font: 800 16px 'Bricolage Grotesque', sans-serif;
   margin: 0 0 8px;
 }
 
@@ -360,7 +360,7 @@
 }
 
 .mock-partner-copy h2 {
-  font: 800 clamp(29px, 3.2vw, 42px)/1.2 Manrope, sans-serif;
+  font: 800 clamp(29px, 3.2vw, 42px)/1.2 'Bricolage Grotesque', sans-serif;
   margin: 0 0 20px;
 }
 
@@ -393,7 +393,7 @@
 }
 
 .mock-why-heading h2 {
-  font: 800 32px Manrope, sans-serif;
+  font: 800 32px 'Bricolage Grotesque', sans-serif;
   margin: 0 0 10px;
 }
 
@@ -434,7 +434,7 @@
 }
 
 .mock-strength-card h3 {
-  font: 800 14px Manrope, sans-serif;
+  font: 800 14px 'Bricolage Grotesque', sans-serif;
   margin: 0 0 7px;
 }
 
@@ -465,7 +465,7 @@
 }
 
 .mock-stats strong {
-  font: 800 27px Manrope, sans-serif;
+  font: 800 27px 'Bricolage Grotesque', sans-serif;
 }
 
 .mock-stats small {
@@ -487,7 +487,7 @@
 }
 
 .mock-services-intro h2 {
-  font: 800 27px/1.25 Manrope, sans-serif;
+  font: 800 27px/1.25 'Bricolage Grotesque', sans-serif;
   margin: 0 0 14px;
 }
 
@@ -535,7 +535,7 @@
 }
 
 .mock-service-card h3 {
-  font: 800 15px Manrope, sans-serif;
+  font: 800 15px 'Bricolage Grotesque', sans-serif;
   margin: 12px 0;
 }
 
@@ -574,7 +574,7 @@
 
 .mock-reviews h2,
 .mock-faq h2 {
-  font: 800 27px Manrope, sans-serif;
+  font: 800 27px 'Bricolage Grotesque', sans-serif;
   margin: 0 0 8px;
 }
 

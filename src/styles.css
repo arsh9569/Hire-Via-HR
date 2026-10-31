@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700;800&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap');
 
 /* =========================================
    GLOBAL STYLES
 ========================================= */
 
 :root {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Hanken Grotesk', sans-serif;
   color: #151a2a;
   background: #ffffff;
   font-synthesis: none;
@@ -94,7 +94,7 @@ textarea {
 
 .brand-copy strong,
 .footer-brand strong {
-  font: 800 22px Manrope, sans-serif;
+  font: 800 22px 'Bricolage Grotesque', sans-serif;
 }
 
 .brand-copy em,
@@ -225,7 +225,7 @@ textarea {
 
 .hero h1,
 .inner-hero h1 {
-  font: 800 clamp(42px, 4.5vw, 64px)/1.08 Manrope, sans-serif;
+  font: 800 clamp(42px, 4.5vw, 64px)/1.08 'Bricolage Grotesque', sans-serif;
   letter-spacing: -2.4px;
   margin: 0 0 20px;
 }
@@ -341,7 +341,7 @@ h2 span {
 .split-grid h2,
 .services-layout h2,
 .values-section h2 {
-  font: 800 clamp(30px, 3.4vw, 44px)/1.16 Manrope, sans-serif;
+  font: 800 clamp(30px, 3.4vw, 44px)/1.16 'Bricolage Grotesque', sans-serif;
   letter-spacing: -1.3px;
   margin: 0 0 13px;
 }
@@ -457,7 +457,7 @@ h2 span {
 }
 
 .trust-section .trust-card h3 {
-  font: 600 27px/1.2 Manrope, sans-serif;
+  font: 600 27px/1.2 'Bricolage Grotesque', sans-serif;
   margin: 30px 0 12px;
 }
 
@@ -542,7 +542,7 @@ h2 span {
 
 .info-card h3,
 .service-card h3 {
-  font: 700 20px Manrope, sans-serif;
+  font: 700 20px 'Bricolage Grotesque', sans-serif;
   margin: 0 0 10px;
 }
 
@@ -579,7 +579,7 @@ h2 span {
 }
 
 .stats strong {
-  font: 800 34px Manrope, sans-serif;
+  font: 800 34px 'Bricolage Grotesque', sans-serif;
 }
 
 .stats span {
@@ -815,7 +815,7 @@ h2 span {
 }
 
 .cta-banner h2 {
-  font: 800 clamp(32px, 4vw, 48px)/1.15 Manrope, sans-serif;
+  font: 800 clamp(32px, 4vw, 48px)/1.15 'Bricolage Grotesque', sans-serif;
   margin: 0 0 14px;
 }
 
@@ -880,7 +880,7 @@ h2 span {
 }
 
 .path-card h2 {
-  font: 800 28px/1.2 Manrope, sans-serif;
+  font: 800 28px/1.2 'Bricolage Grotesque', sans-serif;
   margin: 8px 0 14px;
 }
 
@@ -911,7 +911,7 @@ h2 span {
 }
 
 .contact-heading h1 {
-  font: 800 42px Manrope, sans-serif;
+  font: 800 42px 'Bricolage Grotesque', sans-serif;
   color: var(--purple);
   margin: 0 0 10px;
 }
@@ -948,7 +948,7 @@ h2 span {
 }
 
 .contact-info h2 {
-  font: 700 25px Manrope, sans-serif;
+  font: 700 25px 'Bricolage Grotesque', sans-serif;
   margin: 0 0 8px;
 }
 
@@ -1197,6 +1197,141 @@ h2 span {
   padding: 55px 0 20px;
 }
 
+.privacy-page {
+  padding: 64px 24px 80px;
+  background: #f4f8fb;
+}
+
+.privacy-content {
+  width: min(100%, 960px);
+  margin: 0 auto;
+  padding: 48px 56px;
+  color: var(--navy);
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 36px #111a2d0d;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.privacy-content h1 {
+  margin: 0 0 8px;
+  font-size: clamp(30px, 4vw, 42px);
+  line-height: 1.2;
+}
+
+.privacy-content .privacy-updated {
+  margin: 0 0 24px;
+  color: var(--muted);
+}
+
+.privacy-content section {
+  margin-top: 32px;
+}
+
+.privacy-content h2 {
+  margin: 0 0 12px;
+  font-size: 22px;
+  line-height: 1.4;
+}
+
+.privacy-content p {
+  margin: 0 0 14px;
+}
+
+.privacy-content ul {
+  display: grid;
+  gap: 8px;
+  margin: 12px 0 0;
+  padding-left: 24px;
+}
+
+.privacy-content a {
+  color: #2257a5;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.privacy-contact {
+  list-style: none;
+  padding-left: 0 !important;
+}
+
+.floating-controls {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 30;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.whatsapp-button {
+  display: grid;
+  width: 52px;
+  height: 52px;
+  padding: 11px;
+  place-items: center;
+  color: #ffffff;
+  background: #25d366;
+  border-radius: 50%;
+  box-shadow: 0 3px 12px #111a2d40;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.whatsapp-button:hover {
+  color: #ffffff;
+  background: #1fb95a;
+  transform: translateY(-2px);
+}
+
+.whatsapp-button svg {
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+
+.scroll-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.scroll-controls button {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  padding: 10px;
+  place-items: center;
+  color: #ffffff;
+  background: var(--navy);
+  border: 0;
+  border-radius: 50%;
+  box-shadow: 0 3px 12px #111a2d40;
+  cursor: pointer;
+  transition: background-color 0.2s ease, opacity 0.2s ease;
+}
+
+.scroll-controls button:hover:not(:disabled) {
+  background: var(--orange);
+}
+
+.scroll-controls button:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.scroll-controls svg {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
+}
+
 .footer-grid {
   display: grid;
   grid-template-columns: 1.6fr 0.7fr 0.9fr 1.1fr;
@@ -1356,6 +1491,19 @@ h2 span {
 @media (max-width: 650px) {
   .container {
     width: min(calc(100% - 34px), 520px);
+  }
+
+  .privacy-page {
+    padding: 32px 16px 48px;
+  }
+
+  .privacy-content {
+    padding: 30px 22px;
+    font-size: 15px;
+  }
+
+  .privacy-content h2 {
+    font-size: 19px;
   }
 
   .site-header {
@@ -1686,7 +1834,7 @@ h2 span {
 }
 
 .about-hero-content h1 {
-  font: 800 clamp(34px, 4.3vw, 58px)/1.12 Manrope, sans-serif;
+  font: 800 clamp(34px, 4.3vw, 58px)/1.12 'Bricolage Grotesque', sans-serif;
   letter-spacing: -1.5px;
   margin: 0 auto 24px;
   max-width: 1000px;
@@ -1725,7 +1873,7 @@ h2 span {
 }
 
 .about-section-heading h2 {
-  font: 800 48px/1.2 Manrope, sans-serif;
+  font: 800 48px/1.2 'Bricolage Grotesque', sans-serif;
   color: var(--navy);
   margin: 0 0 10px;
 }
@@ -1791,7 +1939,7 @@ h2 span {
 }
 
 .about-value-card h3 {
-  font: 700 25px/1.25 Manrope, sans-serif;
+  font: 700 25px/1.25 'Bricolage Grotesque', sans-serif;
   margin: 0 0 8px;
   color: #202943;
 }
@@ -1877,7 +2025,7 @@ h2 span {
 }
 
 .about-partner-content h2 {
-  font: 800 clamp(30px, 3.2vw, 42px)/1.2 Manrope, sans-serif;
+  font: 800 clamp(30px, 3.2vw, 42px)/1.2 'Bricolage Grotesque', sans-serif;
   color: var(--navy);
   letter-spacing: -1px;
   margin: 0 0 15px;
@@ -2030,7 +2178,7 @@ h2 span {
 }
 
 .reviews-heading h2 {
-  font: 800 clamp(28px, 3.5vw, 42px)/1.2 Manrope, sans-serif;
+  font: 800 clamp(28px, 3.5vw, 42px)/1.2 'Bricolage Grotesque', sans-serif;
   color: #151a2a;
   margin: 0 0 12px;
   letter-spacing: -1px;
@@ -2233,7 +2381,7 @@ h2 span {
 }
 
 .mock-hero-copy h1 {
-  font: 800 clamp(40px, 4.2vw, 62px)/1.12 Manrope, sans-serif;
+  font: 800 clamp(40px, 4.2vw, 62px)/1.12 'Bricolage Grotesque', sans-serif;
   letter-spacing: -2px;
   margin: 0 0 22px;
   color: #151a2a;
@@ -2323,7 +2471,7 @@ h2 span {
 }
 
 .mock-section-heading h2 {
-  font: 800 clamp(32px, 3.5vw, 44px)/1.2 Manrope, sans-serif;
+  font: 800 clamp(32px, 3.5vw, 44px)/1.2 'Bricolage Grotesque', sans-serif;
   margin: 0 0 12px;
   color: #151a2a;
 }
@@ -2390,7 +2538,7 @@ h2 span {
 }
 
 .mock-trust-card h3 {
-  font: 700 21px Manrope, sans-serif;
+  font: 700 21px 'Bricolage Grotesque', sans-serif;
   margin: 0 0 12px;
 }
 
@@ -2453,7 +2601,7 @@ h2 span {
 .mock-image-caption small { font-size: 10px; color: #687083; margin-top: 4px; }
 
 .mock-partner-copy h2 {
-  font: 800 clamp(32px, 3.4vw, 45px)/1.2 Manrope, sans-serif;
+  font: 800 clamp(32px, 3.4vw, 45px)/1.2 'Bricolage Grotesque', sans-serif;
   letter-spacing: -1px;
   margin: 0 0 22px;
 }
@@ -2490,7 +2638,7 @@ h2 span {
 .mock-why-heading { margin-bottom: 34px; padding-top: 55px; }
 
 .mock-why-heading h2 {
-  font: 800 clamp(30px, 3.2vw, 42px)/1.2 Manrope, sans-serif;
+  font: 800 clamp(30px, 3.2vw, 42px)/1.2 'Bricolage Grotesque', sans-serif;
   margin: 0 0 12px;
 }
 
@@ -2548,7 +2696,7 @@ h2 span {
   stroke-linejoin: round;
 }
 
-.mock-strength-card h3 { font: 700 16px Manrope, sans-serif; color: #383838; margin: 0 0 8px; }
+.mock-strength-card h3 { font: 700 16px 'Bricolage Grotesque', sans-serif; color: #383838; margin: 0 0 8px; }
 .mock-strength-card p { color: #686868; font-size: 12px; line-height: 1.6; margin: 0; }
 
 .mock-stats {
@@ -2579,7 +2727,7 @@ h2 span {
 .mock-stats div:first-child .mock-stat-icon svg path { fill: currentColor; stroke: none; }
 .mock-stats div:nth-child(2) .mock-stat-icon svg circle { fill: currentColor; stroke: none; }
 .mock-stats div:nth-child(2) .mock-stat-icon svg path { stroke: #fff; }
-.mock-stats strong { font: 800 24px Manrope, sans-serif; }
+.mock-stats strong { font: 800 24px 'Bricolage Grotesque', sans-serif; }
 .mock-stats small { font-size: 15px; }
 
 /* Services - purple accents are intentionally limited to this section */
@@ -2594,7 +2742,7 @@ h2 span {
 }
 
 .mock-services-intro h2 {
-  font: 800 clamp(28px, 3vw, 38px)/1.25 Manrope, sans-serif;
+  font: 800 clamp(28px, 3vw, 38px)/1.25 'Bricolage Grotesque', sans-serif;
   margin: 0;
 }
 
@@ -2618,7 +2766,7 @@ h2 span {
 }
 
 .mock-service-card > small { display: block; text-align: right; color: #9298a5; font-size: 10px; }
-.mock-service-card h3 { font: 700 20px/1.3 Manrope, sans-serif; margin: 12px 0 18px; }
+.mock-service-card h3 { font: 700 20px/1.3 'Bricolage Grotesque', sans-serif; margin: 12px 0 18px; }
 .mock-service-card p { font-size: 12px; line-height: 1.7; color: #687083; margin: 0; padding-right: 35px; }
 
 .mock-service-card > a {
@@ -2643,7 +2791,7 @@ h2 span {
 
 .mock-reviews > h2,
 .mock-faq > h2 {
-  font: 800 clamp(30px, 3.2vw, 42px)/1.2 Manrope, sans-serif;
+  font: 800 clamp(30px, 3.2vw, 42px)/1.2 'Bricolage Grotesque', sans-serif;
   margin: 0 0 12px;
 }
 
@@ -2748,7 +2896,7 @@ h2 span {
 
 .mock-faq-intro h2 {
   color: #111318;
-  font: 800 clamp(30px, 3vw, 38px)/1.3 Manrope, sans-serif;
+  font: 800 clamp(30px, 3vw, 38px)/1.3 'Bricolage Grotesque', sans-serif;
   margin: 0 0 18px;
 }
 

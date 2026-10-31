@@ -36,7 +36,6 @@ export default function Footer() {
         <div><h4>Information</h4><Link to="/privacy-policy">Privacy Policy</Link><Link to="/terms">Terms and Conditions</Link><Link to="/refund-policy">Refund Policy</Link></div>
         <div><h4>Contact</h4><p>D100, 3rd Floor, Gali Number 40, Rajapuri, Uttam Nagar, New Delhi - 110059</p><p><a href="tel:+919220762559">+91 9220762559</a></p><p><a href="mailto:info@hireviahr.in">info@hireviahr.in</a></p></div>
       </div>
-      <div className="copyright container">© 2024 Hire Via HR. All Rights Reserved.</div>
     </footer>
   )
 }

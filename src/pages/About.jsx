@@ -2,19 +2,19 @@ import { Link } from 'react-router-dom'
 
 const values = [
   {
-    icon: '◎',
+    icon: <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9" /><circle cx="12" cy="12" r="5.5" /><circle cx="12" cy="12" r="2" /></svg>,
     title: 'Our Mission',
     text: 'To provide comprehensive, innovative solutions that elevate businesses and individuals alike – whether through connecting talent or shaping bright futures.',
     color: 'mission'
   },
   {
-    icon: '♙',
+    icon: <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3.2 14.2 5l3-.2.5 2.9 2.3 1.9-1.4 2.7.7 2.9-2.7 1.2-1.2 2.7-2.9-.7L12 21l-2.5-1.6-2.9.7-1.2-2.7-2.7-1.2.7-2.9L2 10.1l2.3-1.9.5-2.9 3 .2L12 3.2Z" /><path d="m9 12 2 2 4-4" /><path d="M9 19.5v2l3-1.6 3 1.6v-2" /></svg>,
     title: 'Excellence, Always',
     text: 'We are committed to delivering top-notch staffing services that exceed the expectations of both our clients and candidates.',
     color: 'excellence'
   },
   {
-    icon: '♧',
+    icon: <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 13h3l2 2h7.5a2 2 0 0 0 0-4H12a2 2 0 0 1-2-2h4a4 4 0 0 1 4 4" /><path d="M3 13v6h3l2 1h7a4 4 0 0 0 2.8-1.2L22 15a2 2 0 0 0-2.8-2.8l-2.1 1.5" /><path d="m16 3 .9 2 2.1.3-1.5 1.5.4 2.1L16 8l-1.9.9.4-2.1L13 5.3l2.1-.3L16 3Z" /></svg>,
     title: 'Empowerment & Innovation',
     text: 'We embrace change and empower our clients and candidates to reach their full potential through forward-thinking recruitment solutions.',
     color: 'empowerment'

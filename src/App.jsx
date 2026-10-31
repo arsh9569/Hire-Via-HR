@@ -1,3 +1,4 @@
+
 import { Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
@@ -8,12 +9,13 @@ import Contact from './pages/Contact'
 import PrivacyPolicy from './pages/PrivacyPolicy'
 import RefundPolicy from './pages/RefundPolicy'
 import Terms from './pages/Terms'
-import ScrollControls from './components/ScrollControls'
+import WhatsAppButton from './components/WhatsAppButton'
 
 export default function App() {
   return (
     <>
       <Navbar />
+
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -26,8 +28,9 @@ export default function App() {
           <Route path="*" element={<Home />} />
         </Routes>
       </main>
+
       <Footer />
-      <ScrollControls />
+      <WhatsAppButton />
     </>
   )
 }

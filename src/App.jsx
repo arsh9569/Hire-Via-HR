@@ -9,7 +9,7 @@ import Contact from './pages/Contact'
 import PrivacyPolicy from './pages/PrivacyPolicy'
 import RefundPolicy from './pages/RefundPolicy'
 import Terms from './pages/Terms'
-import WhatsAppButton from './components/WhatsAppButton'
+import ScrollControls from './components/ScrollControls'
 
 export default function App() {
   return (
@@ -30,7 +30,7 @@ export default function App() {
       </main>
 
       <Footer />
-      <WhatsAppButton />
+      <ScrollControls />
     </>
   )
 }

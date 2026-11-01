@@ -24,6 +24,10 @@ app.use(
 
 app.use(express.json());
 
+const emailUser = process.env.EMAIL_USER?.trim();
+const emailPass = process.env.EMAIL_PASS?.replace(/\s+/g, "");
+const clientEmail = process.env.CLIENT_EMAIL?.trim();
+
 // Gmail transporter
 const transporter = nodemailer.createTransport({
   service: "gmail",
@@ -31,10 +35,23 @@ const transporter = nodemailer.createTransport({
   greetingTimeout: 10000,
   socketTimeout: 30000,
   auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS,
+    user: emailUser,
+    pass: emailPass,
   },
 });
+
+if (emailUser && emailPass) {
+  transporter.verify().then(
+    () => console.log("Email transporter is ready"),
+    (error) => {
+      console.error("Email transporter verification failed:", {
+        code: error?.code,
+        responseCode: error?.responseCode,
+        command: error?.command,
+      });
+    }
+  );
+}
 
 // Health check route
 app.get("/", (req, res) => {
@@ -48,9 +65,11 @@ app.post("/api/contact", async (req, res) => {
   try {
     const { firstName, lastName, email, phone, subject, message } = req.body;
 
-    const missingEmailSettings = ["EMAIL_USER", "EMAIL_PASS", "CLIENT_EMAIL"].filter(
-      (key) => !process.env[key]?.trim()
-    );
+    const missingEmailSettings = [
+      ["EMAIL_USER", emailUser],
+      ["EMAIL_PASS", emailPass],
+      ["CLIENT_EMAIL", clientEmail],
+    ].filter(([, value]) => !value).map(([key]) => key);
     if (missingEmailSettings.length > 0) {
       console.error(
         `Contact email configuration is missing: ${missingEmailSettings.join(", ")}`
@@ -71,9 +90,9 @@ app.post("/api/contact", async (req, res) => {
     await transporter.sendMail({
       from: {
         name: "Hire Via HR - Website Enquiry",
-        address: process.env.EMAIL_USER,
+        address: emailUser,
       },
-      to: process.env.CLIENT_EMAIL,
+      to: clientEmail,
       replyTo: email,
       subject: `New Contact Enquiry - ${subject || "General Inquiry"}`,
       text: `
@@ -93,7 +112,11 @@ ${message}
       message: "Your message has been sent successfully!",
     });
   } catch (error) {
-    console.error("Email sending failed:", error);
+    console.error("Email sending failed:", {
+      code: error?.code,
+      responseCode: error?.responseCode,
+      command: error?.command,
+    });
 
     return res.status(500).json({
       message: "Unable to send your message. Please try again later.",

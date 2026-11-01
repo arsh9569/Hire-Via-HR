@@ -15,6 +15,13 @@ Vite proxies local `/api` requests to it. Production uses
 to override it if the backend URL changes. Set `FRONTEND_URL` on the backend to the
 website's origin. Never commit `.env` or publish email credentials.
 
+On Render, set `EMAIL_USER` to the Gmail account used to send enquiries,
+`EMAIL_PASS` to that account's Google App Password, and `CLIENT_EMAIL` to the
+inbox that should receive them. The backend strips whitespace from the app password.
+After deploying, check the Render logs for `Email transporter is ready`; if verification
+fails, replace the App Password and redeploy. Do not share the password in screenshots
+or chat.
+
 ## Routes
 - `/` — Home
 - `/about` — About Us

@@ -1413,10 +1413,9 @@ h2 span {
 }
 
 .copyright {
-  border-top: 1px solid #ffffff20;
+  border-bottom: 1px solid #ffffff20;
   margin-top: 38px;
-  padding-top: 18px;
-
+  padding: 18px 0;
   color: #aeb7c8;
   font-size: 12px;
 }

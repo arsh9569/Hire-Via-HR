@@ -557,6 +557,8 @@ export default function Contact() {
     setLoading(true)
     setSent(false)
     setError('')
+    const controller = new AbortController()
+    const timeoutId = window.setTimeout(() => controller.abort(), 90000)
     try {
       const apiUrl = (
         import.meta.env.VITE_API_URL ||
@@ -565,7 +567,8 @@ export default function Contact() {
       const response = await fetch(`${apiUrl}/api/contact`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
+        body: JSON.stringify(formData),
+        signal: controller.signal
       })
       const result = await response.json()
       if (!response.ok) {
@@ -575,13 +578,18 @@ export default function Contact() {
       form.reset()
       setSelectedCountry(countries.find(({ name }) => name === 'India'))
     } catch (err) {
-      setError(
-        err instanceof TypeError
-          ? 'Could not connect to the contact server. Please try again later or call +91 9220762559.'
-          : err.message
-      )
+      if (controller.signal.aborted) {
+        setError('The request timed out. Please try again or call +91 9220762559.')
+      } else {
+        setError(
+          err instanceof TypeError
+            ? 'Could not connect to the contact server. Please try again later or call +91 9220762559.'
+            : err.message
+        )
+      }
       console.error(err)
     } finally {
+      window.clearTimeout(timeoutId)
       setLoading(false)
     }
   }

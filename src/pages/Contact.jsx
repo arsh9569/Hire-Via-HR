@@ -1,21 +1,24 @@
 import { useEffect, useRef, useState } from 'react'
 
-const DEFAULT_API_URL = 'https://hire-via-hr-backend.onrender.com'
+const DEFAULT_API_URL = 'https://hire-via-hr-server.vercel.app'
 
 function getApiUrl() {
   if (import.meta.env.DEV) return ''
 
-  const configuredApiUrl = import.meta.env.VITE_API_URL?.trim()
+  let configuredApiUrl = import.meta.env.VITE_API_URL?.trim()
   if (!configuredApiUrl) return DEFAULT_API_URL
 
   try {
+    if (!/^https?:\/\//i.test(configuredApiUrl)) {
+      configuredApiUrl = `https://${configuredApiUrl}`
+    }
     const url = new URL(configuredApiUrl)
     if (url.protocol !== 'http:' && url.protocol !== 'https:') {
       throw new TypeError('Expected an HTTP or HTTPS URL.')
     }
-    return configuredApiUrl.replace(/\/+$/, '')
+    return `${url.origin}${url.pathname}`.replace(/\/+$/, '')
   } catch (error) {
-    console.error('Invalid VITE_API_URL; using the default Render API URL.', error)
+    console.error('Invalid VITE_API_URL; using the default Vercel API URL.', error)
     return DEFAULT_API_URL
   }
 }

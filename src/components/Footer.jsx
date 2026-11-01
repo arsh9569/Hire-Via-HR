@@ -37,7 +37,7 @@ export default function Footer() {
         <div><h4>Contact</h4><p>Rajapuri, Uttam Nagar, Dwarka, New Delhi - 110075</p><p>Branch offices: Hyderabad, Bangalore, Pune, Chandigarh and Mumbai</p><p><a href="tel:+919220762559">+91 9220762559</a></p><p><a href="mailto:info@hireviahr.in">info@hireviahr.in</a></p></div>
       </div>
       <div className="copyright">
-        <div className="container">2024 All Rights Reserved</div>
+        <div className="container"> Copyright © 2024 Hire Via Hr. All Rights Reserved.</div>
       </div>
     </footer>
   )

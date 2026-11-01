@@ -558,7 +558,10 @@ export default function Contact() {
     setSent(false)
     setError('')
     try {
-      const apiUrl = import.meta.env.VITE_API_URL || ''
+      const apiUrl = (
+        import.meta.env.VITE_API_URL ||
+        (import.meta.env.DEV ? '' : 'https://hire-via-hr-backend.onrender.com')
+      ).replace(/\/+$/, '')
       const response = await fetch(`${apiUrl}/api/contact`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },

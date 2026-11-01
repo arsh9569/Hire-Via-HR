@@ -9,8 +9,10 @@
 5. In one terminal, run `npm run server`.
 6. In another terminal, run `npm run dev` and open the local URL printed by Vite.
 
-Vite proxies local `/api` requests to the backend on port 5000. In production, set
-`VITE_API_URL` to the backend origin and set `FRONTEND_URL` on the backend to the
+Keep `npm run server` running locally; it handles email and listens on port 5000.
+Vite proxies local `/api` requests to it. Production uses
+`https://hire-via-hr-backend.onrender.com` by default; set `VITE_API_URL` in Vercel
+to override it if the backend URL changes. Set `FRONTEND_URL` on the backend to the
 website's origin. Never commit `.env` or publish email credentials.
 
 ## Routes

@@ -1,5 +1,25 @@
 import { useEffect, useRef, useState } from 'react'
 
+const DEFAULT_API_URL = 'https://hire-via-hr-backend.onrender.com'
+
+function getApiUrl() {
+  if (import.meta.env.DEV) return ''
+
+  const configuredApiUrl = import.meta.env.VITE_API_URL?.trim()
+  if (!configuredApiUrl) return DEFAULT_API_URL
+
+  try {
+    const url = new URL(configuredApiUrl)
+    if (url.protocol !== 'http:' && url.protocol !== 'https:') {
+      throw new TypeError('Expected an HTTP or HTTPS URL.')
+    }
+    return configuredApiUrl.replace(/\/+$/, '')
+  } catch (error) {
+    console.error('Invalid VITE_API_URL; using the default Render API URL.', error)
+    return DEFAULT_API_URL
+  }
+}
+
 const countryRecords = [
 
   ['Afghanistan', '+93', 'AF'],
@@ -560,9 +580,7 @@ export default function Contact() {
     const controller = new AbortController()
     const timeoutId = window.setTimeout(() => controller.abort(), 90000)
     try {
-      const apiUrl = import.meta.env.DEV
-        ? ''
-        : (import.meta.env.VITE_API_URL || 'https://hire-via-hr-backend.onrender.com').replace(/\/+$/, '')
+      const apiUrl = getApiUrl()
       const response = await fetch(`${apiUrl}/api/contact`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },

@@ -12,7 +12,8 @@
 Keep `npm run server` running locally; it handles email and listens on port 5000.
 Vite proxies local `/api` requests to it. In production, the contact form uses
 `https://hire-via-hr-backend.onrender.com`; set `VITE_API_URL` in the frontend
-deployment only if the backend URL changes. Set `EMAIL_USER`, `EMAIL_PASS`, and
+deployment to an absolute HTTP(S) URL only if the backend URL changes. Invalid or
+relative values fall back to the default Render API. Set `EMAIL_USER`, `EMAIL_PASS`, and
 `CLIENT_EMAIL` in the Render backend's environment variables. Never commit `.env`
 or publish email credentials.
 

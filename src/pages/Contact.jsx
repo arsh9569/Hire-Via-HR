@@ -560,17 +560,22 @@ export default function Contact() {
     const controller = new AbortController()
     const timeoutId = window.setTimeout(() => controller.abort(), 90000)
     try {
-      const apiUrl = (
-        import.meta.env.VITE_API_URL ||
-        (import.meta.env.DEV ? '' : 'https://hire-via-hr-backend.onrender.com')
-      ).replace(/\/+$/, '')
-      const response = await fetch(`${apiUrl}/api/contact`, {
+      const response = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
         signal: controller.signal
       })
-      const result = await response.json()
+      let result
+      try {
+        result = await response.json()
+      } catch {
+        throw new Error(
+          response.ok
+            ? 'The contact server returned an invalid response. Please try again later or call +91 9220762559.'
+            : `The contact service is unavailable (HTTP ${response.status}). Please try again later or call +91 9220762559.`
+        )
+      }
       if (!response.ok) {
         throw new Error(result.message || 'Unable to send your message. Please try again.')
       }
@@ -615,7 +620,7 @@ export default function Contact() {
             <button className="btn btn-navy submit-btn" type="submit" disabled={loading}>{loading ? "Sending..." : "Send Message"}</button>
 
             {sent && <p className="form-notice" role="status">Message sent successfully!</p>}
-{error && <p className="form-notice" role="alert">{error}</p>}
+            {error && <p className="form-notice form-notice-error" role="alert">{error}</p>}
 
           </form>
         </div>

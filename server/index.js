@@ -127,6 +127,14 @@ ${message}
 // Render-compatible port
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, () => {
-  console.log(`Hire Via HR backend running on port ${PORT}`);
-});
+// Export Express app for Vercel
+export default app;
+
+// Run server locally or on Render
+if (!process.env.VERCEL) {
+  const PORT = process.env.PORT || 5000;
+
+  app.listen(PORT, () => {
+    console.log(`Hire Via HR backend running on port ${PORT}`);
+  });
+}

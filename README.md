@@ -10,10 +10,11 @@
 6. In another terminal, run `npm run dev` and open the local URL printed by Vite.
 
 Keep `npm run server` running locally; it handles email and listens on port 5000.
-Vite proxies local `/api` requests to it. In production, the Vercel API function
-handles `/api/contact` on the same origin as the website. Set `EMAIL_USER`,
-`EMAIL_PASS`, and `CLIENT_EMAIL` in the Vercel project's environment variables.
-Never commit `.env` or publish email credentials.
+Vite proxies local `/api` requests to it. In production, the contact form uses
+`https://hire-via-hr-backend.onrender.com`; set `VITE_API_URL` in the frontend
+deployment only if the backend URL changes. Set `EMAIL_USER`, `EMAIL_PASS`, and
+`CLIENT_EMAIL` in the Render backend's environment variables. Never commit `.env`
+or publish email credentials.
 
 Set `EMAIL_USER` to the Gmail account used to send enquiries, `EMAIL_PASS` to that
 account's Google App Password, and `CLIENT_EMAIL` to the inbox that should receive

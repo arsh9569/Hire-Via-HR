@@ -560,7 +560,10 @@ export default function Contact() {
     const controller = new AbortController()
     const timeoutId = window.setTimeout(() => controller.abort(), 90000)
     try {
-      const response = await fetch('/api/contact', {
+      const apiUrl = import.meta.env.DEV
+        ? ''
+        : (import.meta.env.VITE_API_URL || 'https://hire-via-hr-backend.onrender.com').replace(/\/+$/, '')
+      const response = await fetch(`${apiUrl}/api/contact`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
